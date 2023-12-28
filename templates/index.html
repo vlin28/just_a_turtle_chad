@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>just_a_turtle_chad</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="functions.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <img id="pfp" src="pfp.jpg" />
+            <h1 id="name">@just_a_turtle_chad</h1>
+        </div>
+        <div id="comments">
+            {%for comment in comments -%}
+                    <div class="comment">
+                        <p class="time">
+                            {{ comment.publishedAt }}
+                            <a href='https://www.youtube.com/watch?v={{ comment.videoID }}' target='_blank'>
+                                <img class='logo' src='youtubeLogo.png' />
+                            </a>
+                        </p>
+                        <p class="text">
+                            {{ comment.textDisplay | safe }}
+                        </p>
+                    </div>
+            {%- endfor%}
+        </div>
+    </div>
+</body>
+</html>
