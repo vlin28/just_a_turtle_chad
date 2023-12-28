@@ -1,3 +1,3 @@
-./__pycache__
-./python/__pycache__
-./apiKey.json
+/__pycache__
+/python/__pycache__
+apiKey.json

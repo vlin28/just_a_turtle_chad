@@ -2,9 +2,9 @@ import bleach
 from pymongo import MongoClient
 
 class Database:
-    def __init__(self, type):
+    def __init__(self, type, port):
         self.allowedTags = ['br', 'strong', 'i', 'em', 'mark', 'small', 'del', 'ins', 'sub', 'sup']
-        self.mongo = MongoClient(type)
+        self.mongo = MongoClient(host=type, port=port)
         self.db = self.mongo['db']
         self.commentData = self.db['comments']
         self.htmlData = self.db['html']

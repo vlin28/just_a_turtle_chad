@@ -4,7 +4,7 @@ from python.commentHandler import *
 from db import Database
 
 app = Flask(__name__, static_folder="static")
-database = Database("localhost")
+database = Database("mongo", 65123)
 
 @app.route('/', methods=["GET"])
 def index():
@@ -53,4 +53,4 @@ def js():
     return app.send_static_file("functions.js")
 
 if __name__ == '__main__':
-    app.run("localhost", 4242)
+    app.run("0.0.0.0", 4242)

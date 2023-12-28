@@ -6,7 +6,7 @@ from db import Database
 from python.commentHandler import getTurtle
 from python.getKey import getKey
 
-database = Database("localhost")
+database = Database("mongo", 65123)
 scopes = ["https://www.googleapis.com/auth/youtube.readonly"]
 api_service_name = "youtube"
 api_version = "v3"

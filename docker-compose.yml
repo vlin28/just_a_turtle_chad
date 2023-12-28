@@ -1,0 +1,18 @@
+version: "3.2"
+services:
+  mongo:
+    image: mongo:4.2.5
+    command: mongod --port 65123
+    ports:
+      - 65123:65123
+  app:
+    build: .
+    environment:
+      WAIT_HOSTS: mongo:65123
+    ports:
+      - 4242:4242
+  updater:
+    build: .
+    command: python3 updater.py
+    depends_on:
+      - mongo
